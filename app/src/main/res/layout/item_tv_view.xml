@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+        name="tvShow"
+        type="com.softvrbox.mvvmtvshows.models.TvShow"/>
+    </data>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+
+        <View
+            android:id="@+id/viewSupporter"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignBottom="@id/tvLayout" />
+
+        <LinearLayout
+            android:id="@+id/tvLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:src="@drawable/ic_search"
+                android:id="@+id/tvImageView"
+                android:imageURL="@{tvShow.image_thumbnail_path}"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:hint="aaaa"
+                android:text="@{tvShow.name}"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvName" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

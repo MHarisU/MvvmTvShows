@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="isLoading"
+            type= "Boolean" />
+
+        <variable
+            name="isLoadingMore"
+            type= "Boolean" />
+
+
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.TvShowDetailActivity"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@color/grayLight"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="?actionBarSize">
+
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_back"/>
+
+
+            <TextView
+                android:layout_marginStart="20dp"
+                android:id="@+id/tvShowName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tv Show"/>
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:layout_width="25dp"
+            android:layout_height= "25dp"
+            android:layout_marginTop="20dp"
+            android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default=visible}"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sliderViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/tvShowImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+</layout>
